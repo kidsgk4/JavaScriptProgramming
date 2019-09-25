@@ -1,0 +1,55 @@
+_<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	<script>
+	//function --> 객체가 없이 정의된 것
+	//method --> 객체 내부에 존재하는 것
+	function fun1(){
+		var password="12345678";
+		console.log(password.length);
+	}
+	
+	function fun2(){
+		var ssn="123456-1234567";
+		var sex=ssn.charAt(7);
+		if(sex == "1" || sex == "3"){
+			console.log("남자");
+		}else{
+			console.log("여자");
+		}
+	}
+	
+	function fun3(){
+		var ssn="123456-1234567";
+		var sex=console.log(ssn.charAt(7));
+		
+		var year=ssn.substr(0,2);
+		var month=ssn.substring(2,4);
+		var date=ssn.substr(4,2);
+		console.log(year+"."+month+"."+date);
+	}
+	function fun4(){
+		var now=new Date();
+		var year=now.getFullYear();
+		var date=now.getDate()+1;
+		console.log(now+year+"."+date);
+	}
+	
+	function fun5(radius){
+		var result=radius*radius*Math.PI;
+		console.log(result);
+	}
+	
+	</script>
+	</head>
+	
+	<body>
+		<button onClick="fun1()">String length</button><br/>
+		<button onClick="fun2()">String length</button><br/>
+		<button onClick="fun3()">String substr</button><br/>
+		<button onClick="fun4()">Date</button><br/>
+		<button onClick="fun5(5)">Math</button><br/>
+	</body>
+</html>

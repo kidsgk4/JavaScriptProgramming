@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	<script>
+		//전역 변수
+		var var1=10;
+		var2=20;
+		
+		//함수 선언 java랑 다르게 반환형 x
+		function fun1(){
+			//로컬변수
+			var var3=30;
+			var4=40;
+			
+			console.log(var1);
+			console.log(var2);
+			console.log(var3);
+			console.log(var4);
+		}
+		
+		function fun2(){
+			console.log(var1);
+			console.log(var2);
+			console.log(var3);
+			console.log(var4);
+		}
+		//함수 호출
+		fun1();
+		fun2();
+	</script>
+	</head>
+	
+	<body>
+	
+	</body>
+</html>

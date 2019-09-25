@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	<script>
+		function fun1(){
+			var car={
+				model:"소나타",
+				color:"검정",
+				company:"기아자동차",
+				speed:0,
+				info: function(){
+					console.log(this.model+this.color+this.company);
+				},
+				start: function(){
+					console.log("시동검")
+				},
+				setSpeed(speed){
+					this.speed=speed;
+					console.log(this.speed);
+					
+				},
+				stop: function(){
+					this.setSpeed(0);
+					console.log("멈춤,시동 끔")
+				}
+			};
+			car.info();
+			car.start();
+			car.setSpeed(30);
+			car.stop();
+		}
+		
+	</script>
+	</head>
+	
+	<body onLoad="fun1()">
+	
+	</body>
+</html>

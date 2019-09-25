@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	
+	<script>
+		
+	var var1=10;
+		
+		function fun1(){
+			//로컬 변수
+			var var2=20;
+			
+			if(true){
+				//로컬 변수
+				var var3=30;
+				console.log(var1);
+				console.log(var2);
+				console.log(var3);
+			}
+			//함수 안에 선언된 변수는 함수안에서 어느 위치든 사용가능
+			console.log(var1);
+			console.log(var2);
+			console.log(var3);
+		}
+		fun1();
+	</script>
+	
+	</head>
+	
+	<body>
+		
+	</body>
+</html>

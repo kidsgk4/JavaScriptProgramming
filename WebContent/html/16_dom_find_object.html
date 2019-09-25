@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	
+	<script>
+	//id 로 찾기
+		function fun1(){
+											//쿼리셀렉터 쓸땐 아이디 앞에 # 붙임
+			var img1=document.querySelector("#img1");
+			console.log(img1);
+			img1.src="../common/img/Jellyfish.jpg";
+		}
+		//클래스로 찾기
+		function fun2(){
+			var imgList=document.querySelectorAll(".img2");
+			for(var i=0; i<imgList.length; i++){
+				imgList[i].src="../common/img/Koala.jpg";
+			}
+		}
+		//태그명으로 찾기
+		function fun3(){
+			var imgList=document.querySelectorAll("img");
+			for(var i=0; i<imgList.length; i++){
+				imgList[i].src="../common/img/Tulips.jpg";
+			}
+		}
+		
+		
+		function fun4(){
+			var imgList=document.querySelectorAll("#div1 img");
+			for(var i=0; i<imgList.length; i++){
+				imgList[i].src="../common/img/Chrysanthemum.jpg";
+			}
+		}
+		function fun5(){
+			var inputMid=document.querySelector("#joinForm input[name=mid]");
+			console.log(inputMid.value);
+			
+			var inputPass=document.querySelector("#joinForm input[name=mpassword]");
+			var password=inputPass.value;
+			if(password==""){
+				alert("패스워드 안넣을래?");	
+			}else{
+				if(password.length<8){
+				alert("패스워드 똑바로 안넣을래?");
+				}
+			}
+			
+			var inputHobby =document.querySelectorAll("#joinForm input[name=hobby]");
+			var inputHobbyChecked =document.querySelectorAll("#joinForm input[name=hobby]:checked");
+			
+			for(var i=0; i<inputHobbyChecked.length; i++){
+				console.log(inputHobbyChecked[i].value);
+			}
+		}
+		
+		function fun6(){
+			var form=document.joinForm;
+			
+			var mid=document.joinForm.mid.value;
+			console.log(form);
+			
+			var mpassword=document.joinForm.mpassword.value;
+			console.log(mpassword);
+		}
+	</script>
+	
+	</head>
+	
+	<body>
+		<button onClick="fun1()">아이디로 찾기</button>
+		<button onClick="fun2()">클래스로 찾기</button>
+		<button onClick="fun3()">태그명으로 찾기</button>
+		<button onClick="fun4()">내부 찾기</button>
+		<button onClick="fun5()">폼 양식 찾기</button>
+		<button onClick="fun6()">폼 양식 찾기</button>
+		
+		<hr/>
+		
+		<img id="img1" src="../common/img/Desert.jpg" width="200px">
+		
+		<br/>
+		
+		<img class="img2" src="../common/img/Desert.jpg" width="200px">
+		<img class="img2" src="../common/img/Desert.jpg" width="200px"><br/>
+		
+		<div id="div1">
+			<img src="../common/img/Desert.jpg" width="200px">
+			<img src="../common/img/Desert.jpg" width="200px">
+		</div>
+		<br/>
+		
+		<form id="joinForm" name="joinForm">
+			아이디:<input name="mid" type="text"/><br/>
+			비번:<input name="mpassword" type="password"/><br/>
+			취미:
+			<input name="hobby" type="checkbox" value="movie"/>영화
+			<input name="hobby" type="checkbox" value="trip"/>여행
+			<input name="hobby" type="checkbox" value="coding"/>코딩<br/>
+					
+		</form>
+	
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

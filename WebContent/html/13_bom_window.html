@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	
+	<script>
+		function fun1(){
+			var w =innerWidth; //window생략가능 
+			var h =innerHeight;
+			window.console.log("width: "+w); // //
+			console.log("height: "+h);
+		}
+		
+		function fun2(){
+			window.alert("메시지입니다");
+		}
+		
+		function fun3(){
+			var result= confirm("메시지입니다");
+			if(result==true){
+				console.log("확인을 하셨습니다");
+			}else{
+				console.log("취소를 하셨습니다.")
+			}
+		}
+		
+		function fun4(){
+			var input=prompt("수량을 입력하세요");
+			if(input!=null){
+				var amount=parseInt(input);
+				console.log("입력된 수량: " + amount);
+			}else{
+				console.log("취소를 하셨습니다.")
+			}
+		}
+		
+		function fun5(){
+			window.open("08_event_handling.html", "", "width=300,height=300");
+		}
+		
+		function fun6(){
+			timerId=setInterval(function(){
+				console.log("Hello Java");
+			},1000);
+				
+			}
+		
+		function fun7(){
+			window.clearInterval(timerId);
+		}
+		
+		function fun8(){
+			timerId2=setTimeout(function(){
+				console.log("일어나세요")
+			},5000);
+		}
+		function fun9(){
+			clearTimeout(timerId2);
+		}
+	</script>
+	
+	</head>
+	
+	<body>
+		<button onClick="fun1()">ViewPort Size</button><br/>
+		<button onClick="fun2()">알림 메시지</button><br/>
+		<button onClick="fun3()">확인 메시지</button><br/>
+		<button onClick="fun4()">입력 메시지</button><br/>
+		<button onClick="fun5()">다이얼로그 창 띄우기</button><br/>
+		<button onClick="fun6()">주기적 실행 시작</button>
+		<button onClick="fun7()">주기적 실행 취소</button><br/>
+		<button onClick="fun8()">미래 실행시간 설정</button>
+		<button onClick="fun9()">미래 실행시간 취소</button><br/>
+		<br/>
+	</body>
+</html>

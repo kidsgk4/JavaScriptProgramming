@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function fun1() {
+		console.log("Hello JavaScript");
+		
+	}
+	function fun2() {
+		var x = 10;
+		var y = 20;
+		var result = x + y;
+		console.log(result);
+	}
+	
+	function fun3(){
+		return true;
+	}
+	
+	function fun4(){
+		console.log("마우스가 그림 안에 있습니다.");
+	}
+	function fun5(){
+		console.log("마우스가 그림 밖에 있습니다");
+	}
+</script>
+</head>
+
+<body>
+	<!-- 태그엔 attr (속성) = "밸류값" 구조 
+	on (event 처리 속성)
+-->
+	<button onClick="fun1()">fun1() 호출</button>
+	<button onClick="fun2()">fun2() 호출</button>
+	<a href="javascript:fun1()">
+		<img src="../common/img/icon01.png">
+	</a><br/>
+	
+	<a href="http://www.apache.org" onClick="return fun3()">아파치</a>
+																<!-- on(이벤트)  submit 을 클릭 했을 때 -->
+	<form action="http://www.apache.org" onsubmit="return fun3()">
+		<input type="submit" value="이동"/>
+	</form>
+	
+	<br/>
+	
+	<img src="../common/img/Desert.jpg" width="300"
+		onmouseenter="fun4()" onmouseleave="fun5()"/>
+	
+	
+	
+	
+	
+</body>
+</html>
+

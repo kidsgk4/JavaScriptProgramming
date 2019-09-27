@@ -3,41 +3,29 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
-	
+	<script src="../common/js/jquery-3.4.1.min.js"></script>
 	<script>
-	//id 로 찾기
 		function fun1(){
-											//쿼리셀렉터 쓸땐 아이디 앞에 # 붙임
-			var img1=document.querySelector("#img1");
-			console.log(img1);
-			img1.src="../common/img/Jellyfish.jpg";
-		}
-		//클래스로 찾기
+			var img1=$("#img1");
+			img1.attr("src", "../common/img/Lighthouse.jpg");
+			
+		}	
 		function fun2(){
-			var imgList=document.querySelectorAll(".img2");
-			for(var i=0; i<imgList.length; i++){
-				imgList[i].src="../common/img/Koala.jpg";
-			}
+			var img2=$(".img2");
+			img2.attr("src", "../common/img/Jellyfish.jpg");
 		}
-		//태그명으로 찾기
 		function fun3(){
-			var imgList=document.querySelectorAll("img");
-			for(var i=0; i<imgList.length; i++){
-				imgList[i].src="../common/img/Tulips.jpg";
-			}
+			var img2=$("#div1 img");
+			img2.attr("src", "../common/img/Penguins.jpg");
 		}
-		
 		function fun4(){
-			var imgList=document.querySelectorAll("#div1 img");
-			for(var i=0; i<imgList.length; i++){
-				imgList[i].src="../common/img/Chrysanthemum.jpg";
-			}
+			$("#div img").attr("src", "../common/img/Chrysanthemum.jpg");
 		}
 		function fun5(){
-			var inputMid=document.querySelector("#joinForm input[name=mid]");
-			console.log(inputMid.value);
+			var inputMid=$("#joinForm input[name=mid]");
+			console.log(inputMid.val());
 			
-			var inputPass=document.querySelector("#joinForm input[name=mpassword]");
+			var inputPass=$("#joinForm input[name=mpassword]");
 			var password=inputPass.value;
 			if(password==""){
 				alert("패스워드 안넣을래?");	
@@ -46,26 +34,17 @@
 				alert("패스워드 똑바로 안넣을래?");
 				}
 			}
-			
-			var inputHobby =document.querySelectorAll("#joinForm input[name=hobby]");
-			var inputHobbyChecked =document.querySelectorAll("#joinForm input[name=hobby]:checked");
-			
+		
+			var inputHobby =$("#joinForm input[name=hobby]");
+			var inputHobbyChecked =$("#joinForm input[name=hobby]:checked");
 			for(var i=0; i<inputHobbyChecked.length; i++){
+				console.log(inputHobbyChecked[i].value);
 				console.log(inputHobbyChecked[i].value);
 			}
 		}
 		
-		function fun6(){
-			var form=document.joinForm;
-			
-			var mid=document.joinForm.mid.value;
-			console.log(form);
-			
-			var mpassword=document.joinForm.mpassword.value;
-			console.log(mpassword);
-		}
 	</script>
-	
+
 	</head>
 	
 	<body>
@@ -74,7 +53,6 @@
 		<button onClick="fun3()">태그명으로 찾기</button>
 		<button onClick="fun4()">내부 찾기</button>
 		<button onClick="fun5()">폼 양식 찾기</button>
-		<button onClick="fun6()">폼 양식 찾기</button>
 		
 		<hr/>
 		
@@ -89,6 +67,7 @@
 			<img src="../common/img/Desert.jpg" width="200px">
 			<img src="../common/img/Desert.jpg" width="200px">
 		</div>
+		
 		<br/>
 		
 		<form id="joinForm" name="joinForm">
@@ -103,17 +82,3 @@
 	
 	</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

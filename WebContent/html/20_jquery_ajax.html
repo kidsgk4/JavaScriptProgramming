@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	<script src="../common/js/jquery-3.4.1.min.js"></script>
+	<script>
+		function fun1(){
+			$.ajax({
+				url:"20_ajax_content1.html",
+				success: function(content){
+					$("#div1").html(content);
+					
+				}
+			});		
+		}
+		
+		var timerId=null;
+		var no=1;
+		function fun2(){
+			timerId=setInterval(function(){
+				$.ajax({
+					url:"20_ajax_content"+no+".html", //내용을 받아올 타입 이름
+					success: function(content){ //success : 내용을 받아온것을 어케할거냐 정의하는 메서드
+						$("#div1").html(content); //실행
+						
+					}
+				});
+				no++;
+				if(no==4){
+					no=1;
+				}
+			},3000);	
+		}
+		
+		function fun3(){
+			if(timerId !=null){
+				clearInterval(timerId);
+			}
+		}
+		
+		
+	</script>
+	</head>
+	
+	<body>
+		
+		<button onClick="fun1()">부분갱신</button>
+		<button onClick="fun2()">자동 부분 갱신 시작</button>
+		<button onClick="fun3()">자동 부분 갱신 취소</button>
+		<hr/>	
+		
+		<div style="display:flex; height:300px;">
+			<div style="flex-grow:1; height:100%; border:1px solid black;">
+				<h4>[고정 내용]</h4>
+				<img src="../common/img/menu.png"/>
+			</div>
+			<div id="div1" style="flex-grow:1; height:100%; border:1px solid black;">
+			</div>
+		</div>
+	</body>
+	
+</html>
